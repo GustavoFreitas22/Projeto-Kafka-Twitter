@@ -16,7 +16,6 @@ import javax.validation.constraints.NotNull;
 @Slf4j
 @Getter
 @Setter
-@Builder
 public class Tweet {
 
     @Id
@@ -24,13 +23,16 @@ public class Tweet {
     private int id;
 
     @NotNull
+    String idTweetString;
+
+    @NotNull
     private String texto;
 
     @NotNull
     private String user;
 
-    public Tweet(int id, String texto, String user) {
-        this.id = id;
+    public Tweet( String idTweetString, String texto, String user) {
+        this.idTweetString = idTweetString;
         this.texto = texto;
         this.user = user;
     }

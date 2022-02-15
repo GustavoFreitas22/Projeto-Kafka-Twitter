@@ -18,6 +18,9 @@ public class ConvertTweet {
             tweet.setTexto(jsonParser.parse(json).getAsJsonObject().get("_source")
                     .getAsJsonObject().get("text")
                     .getAsString());
+            tweet.setIdTweetString(jsonParser.parse(json)
+                    .getAsJsonObject().get("id_str")
+                    .getAsString());
 
         }catch (Exception e){
             e.printStackTrace();
